@@ -9,6 +9,7 @@ import LoginModal from '../login/login-modal';
 import { useAppDispatch, useAppSelector } from 'app/config/store';
 import { login } from 'app/shared/reducers/authentication';
 import NewLogin from '../login/newLogin';
+import Login from '../login/login';
 
 export const Home = (props: RouteComponentProps<any>) => {
   const account = useAppSelector(state => state.authentication.account);

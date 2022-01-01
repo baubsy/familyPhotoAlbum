@@ -1,7 +1,7 @@
 import React from 'react';
 import { ValidatedField } from 'react-jhipster';
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter, Alert, Row, Col, Form } from 'reactstrap';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 import { render } from 'react-dom';
 
@@ -11,9 +11,17 @@ export interface newLoginProps {
   handleClose: () => void;
 }
 const NewLogin = (props: newLoginProps) => {
+  const history = useHistory();
   const login = ({ username, password, rememberMe }) => {
     props.handleLogin(username, password, rememberMe);
+    history.push('/landingpage');
   };
+  /*
+  const handleClose = () => {
+    setShowModal(false);
+    props.history.push('/');
+  };
+  */
 
   const {
     handleSubmit,
