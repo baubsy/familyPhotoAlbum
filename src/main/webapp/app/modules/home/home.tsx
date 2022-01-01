@@ -8,6 +8,7 @@ import { Row, Col, Alert } from 'reactstrap';
 import LoginModal from '../login/login-modal';
 import { useAppDispatch, useAppSelector } from 'app/config/store';
 import { login } from 'app/shared/reducers/authentication';
+import NewLogin from '../login/newLogin';
 
 export const Home = (props: RouteComponentProps<any>) => {
   const account = useAppSelector(state => state.authentication.account);
@@ -46,7 +47,7 @@ export const Home = (props: RouteComponentProps<any>) => {
             </Alert>
           </div>
         )}
-        <LoginModal showModal={showModal} handleLogin={handleLogin} handleClose={handleClose} loginError={loginError}></LoginModal>
+        <NewLogin handleLogin={handleLogin} handleClose={handleClose} loginError={loginError}></NewLogin>
         <p>
           If you like JHipster, do not forget to give us a star on{' '}
           <a href="https://github.com/jhipster/generator-jhipster" target="_blank" rel="noopener noreferrer">
