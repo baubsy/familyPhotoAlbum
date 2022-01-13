@@ -1,0 +1,37 @@
+
+entity Picture {
+	name String
+    date String
+    link String
+    description String
+}
+entity Album {
+	name String
+    description String
+}
+entity Tag{
+	name String
+}
+entity Widget{
+	type String
+    props String
+}
+entity UserWidgets{}
+relationship OneToOne{
+	UserWidgets to User
+}
+relationship OneToMany{
+UserWidgets{widget} to Widget{userwidgets}
+}
+relationship ManyToOne{
+	Album{user(id)} to User
+    Picture{album(id)} to Album
+    Picture{user(id)} to User
+}
+relationship ManyToMany{
+	Picture{tag(name)} to Tag{picture(name)}
+}
+
+
+
+

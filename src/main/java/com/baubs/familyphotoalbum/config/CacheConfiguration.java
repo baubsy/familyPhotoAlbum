@@ -48,6 +48,14 @@ public class CacheConfiguration {
             createCache(cm, com.baubs.familyphotoalbum.domain.User.class.getName());
             createCache(cm, com.baubs.familyphotoalbum.domain.Authority.class.getName());
             createCache(cm, com.baubs.familyphotoalbum.domain.User.class.getName() + ".authorities");
+            createCache(cm, com.baubs.familyphotoalbum.domain.Picture.class.getName());
+            createCache(cm, com.baubs.familyphotoalbum.domain.Picture.class.getName() + ".tags");
+            createCache(cm, com.baubs.familyphotoalbum.domain.Album.class.getName());
+            createCache(cm, com.baubs.familyphotoalbum.domain.Tag.class.getName());
+            createCache(cm, com.baubs.familyphotoalbum.domain.Tag.class.getName() + ".pictures");
+            createCache(cm, com.baubs.familyphotoalbum.domain.Widget.class.getName());
+            createCache(cm, com.baubs.familyphotoalbum.domain.UserWidgets.class.getName());
+            createCache(cm, com.baubs.familyphotoalbum.domain.UserWidgets.class.getName() + ".widgets");
             // jhipster-needle-ehcache-add-entry
         };
     }
